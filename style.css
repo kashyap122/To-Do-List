@@ -1,0 +1,164 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataTable a img {
+    cursor: pointer;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+h2 {
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.addTask {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px 10px 10px;
+}
+
+.addTask input {
+    border: 2px solid #365486;
+    height: 33px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+input#date.dueDate {
+    width: 130px;
+}
+
+
+.formPopup input {
+    margin-top: 10px;
+    border: 2px solid #365486;
+    height: 33px;
+    width: 234px;
+    border-radius: 10px;
+}
+
+.formPopup select {
+    border: 2px solid #365486;
+    height: 33px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.addTaskBtn {
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    font-size: 16px;
+    padding: 2px 15px 2px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #0F1035;
+    margin-left: 10px;
+    border: 2px solid #365486;
+}
+
+.saveButton {
+    font-family: 'Rajdhani', sans-serif;
+    border: 2px solid #365486;
+    background-color: #0F1035;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 2px 15px 2px 15px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-top: 270px;
+}
+
+.clearButton {
+    margin-left: 50px;
+}
+
+.centerButton {
+    text-align: center;
+}
+
+#table1 {
+    padding: 10px;
+    background-color: #7FC7D9;
+    border: 2px solid #365486;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    position: fixed;
+}
+
+.addTaskPopup {
+    font-size: large;
+    font-weight: 450;
+    height: 200px;
+    width: 320px;
+}
+
+.addedTasks {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px 10px 10px;
+}
+/* .copyright{
+    background-color: #7FC7D9;
+    border: 2px solid #365486;
+    position: fixed;
+    height: 580px;
+    width: 304.5px;
+    padding: 10px;
+    top: 0px;
+    left: 0px;
+} */
+
+.formPopup {
+    display: none;
+    background-color: #7FC7D9;
+    border: 2px solid #365486;
+    position: fixed;
+    padding: 10px;
+    top: 0px;
+    right: 0px;
+    height: 580px;
+}
+
+.dataTable {
+    text-align: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    background-color: #7FC7D9;
+    border: 2px solid #365486;
+    overflow: hidden;
+    padding: 10px;
+    margin-top: 163px;
+    width: 648px;
+}
+
+.dataTableHeading {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.tbody {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+}
+
+.crossMark {
+    height: 40px;
+    width: 40px;
+    margin-left: 240px;
+}
