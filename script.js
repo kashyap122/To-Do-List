@@ -57,7 +57,7 @@ function saveButton() {
         data.forEach((item, index) => {
             height = "40px";
             width = "40px";
-            deleteSrc = "delete.png";
+            deleteSrc = "/Images/delete.png";
             editSrc = "edit.png";
 
             let row = document.createElement("tr");
