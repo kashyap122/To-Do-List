@@ -6,6 +6,7 @@ document.body.style = 'background:rgb(232, 209, 213);';
 
 function openForm() {
     if (mainTask.value === "") {
+        // alert("")
         alert("You Must Write Something!");
     }
     else {
@@ -72,7 +73,10 @@ function displayData() {
         width = "40px";
         deleteSrc = "/Images/delete.png";
         editSrc = "/Images/edit.png"
+        // checkboxType = "checkbox" 
         let row = document.createElement("tr");
+        // let checkbox1 = document.createElement("input");
+        // checkbox1.type = checkboxType;
         let r1 = document.createElement("td");
         let r2 = document.createElement("td");
         let r3 = document.createElement("td");
@@ -104,7 +108,6 @@ function displayData() {
         a2.appendChild(editImage);
         r5.appendChild(a2);
         a2.addEventListener("click", (event) => {
-            // event.preventDefault();
             editRow(index);
         });
 
@@ -128,31 +131,38 @@ function deleteRow(index) {
 
     displayData();
 }
+
+function openFormToEdit(task, statusOfTask, tarikh) {
+    document.getElementById("hiddenForm").style.display = "block";
+}
+
 function editRow(index) {
     let data = JSON.parse(localStorage.getItem("items")) || [];
-    let arrayIndex = index;
-    console.log(index, data[arrayIndex]);
+    let selectedItem = data[index];
 
+    taskToEdit.value = selectedItem.task;
+    taskStatus.value = selectedItem.statusOfTask;
+    date.value = selectedItem.tarikh;
 
-    // creating the whole form in JS
-    let mainDivJS = document.createElement("div");
-    let formJS = document.createElement("form");
-    let inputJS = document.createElement("input");
-    let sectionJS = document.createElement("section");
-    let optionJS1 = document.createElement("option");
-    let optionJS2 = document.createElement("option");
-    let optionJS3 = document.createElement("option");
-    let dateJS = document.createElement("date");
-    let saveButtonJS = document.createElement("button")
-    let clearButtonJS = document.createElement("button")
+    openFormToEdit();
 
-    mainDivJS.appendChild(formJS);
-    formJS.appendChild(inputJS);
-    formJS.appendChild(sectionJS);
-    formJS.appendChild(optionJS1);
-    formJS.appendChild(optionJS2);
-    formJS.appendChild(optionJS3);
-    formJS.appendChild(dateJS);
-    formJS.appendChild(saveButtonJS);
-    formJS.appendChild(clearButtonJS);
+    document.querySelector('.saveButton').onclick = function () {
+        if (taskToEdit.value === "" || date.value === "") {
+            alert("All fields are required!");
+            return;
+        }
+
+        selectedItem.task = taskToEdit.value;
+        selectedItem.statusOfTask = taskStatus.value;
+        selectedItem.tarikh = date.value;
+
+        localStorage.setItem("items", JSON.stringify(data));
+
+        displayData();
+        closeForm();
+
+        taskToEdit.value = "";
+        taskStatus.value = "";
+        date.value = "";
+    };
 }
